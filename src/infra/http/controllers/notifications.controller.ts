@@ -3,7 +3,7 @@ import { Body, Post } from '@nestjs/common/decorators';
 import { SendNotification } from '../../../application/use-cases/send-notification';
 import { CreateNotificationBody } from '../dtos/create-notification-body';
 
-@Controller()
+@Controller('notifications')
 export class NotificationsController {
   constructor(private sendNotifications: SendNotification) {}
 
