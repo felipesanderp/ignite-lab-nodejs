@@ -1,9 +1,9 @@
-import { NotificationsRepository } from '../../src/application/repositories/notifications-repository';
-import { Notification } from '../../src/application/entities/notification';
+import { NotificationsRepository } from '@application/repositories/notifications-repository';
+import { Notification } from '@application/entities/notification';
 
 export class InMemoryNotificationsRepository
-  implements NotificationsRepository
-{
+  // eslint-disable-next-line prettier/prettier
+  implements NotificationsRepository {
   public notifications: Notification[] = [];
 
   async create(notification: Notification) {
