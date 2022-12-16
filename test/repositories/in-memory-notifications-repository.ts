@@ -4,7 +4,6 @@ import { Notification } from '@application/entities/notification';
 export class InMemoryNotificationsRepository
   // eslint-disable-next-line prettier/prettier
   implements NotificationsRepository {
-
   public notifications: Notification[] = [];
 
   async findById(notificationId: string): Promise<Notification | null> {
@@ -31,5 +30,11 @@ export class InMemoryNotificationsRepository
     if (notificationIndex >= 0) {
       this.notifications[notificationIndex] = notification;
     }
+  }
+
+  async countManyByRecipientId(recipientId: string): Promise<number> {
+    return this.notifications.filter(
+      (notification) => notification.recipientId === recipientId,
+    ).length;
   }
 }
