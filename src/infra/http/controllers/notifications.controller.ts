@@ -20,10 +20,10 @@ export class NotificationsController {
     private getRecipientNotifications: GetRecipientNotifications,
   ) {}
 
-  @Patch(':id/cancel')
-  async cancel(@Param('id') id: string) {
+  @Patch(':notificationId/cancel')
+  async cancel(@Param('notificationId') notificationId: string) {
     await this.cancelNotification.execute({
-      notificationId: id,
+      notificationId,
     });
   }
 
